@@ -9,7 +9,7 @@ require('dotenv').config();
 
 app.use(morgan('dev')) // req logging 
 app.use(express.json())
-mongoose.connect('mongodb+srv://kashyapchaganti96:'+process.env.MONGO_ATLAS_PWD+'@cluster0.t9lqaa8.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://'+process.env.CREDS+process.env.MONGO_ATLAS_PWD+'@cluster0.t9lqaa8.mongodb.net/?retryWrites=true&w=majority')
 app.use('/products',productRoutes);
 app.use('/orders',orderRoutes);
 app.use('/users',userRoutes);
